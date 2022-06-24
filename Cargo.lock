@@ -304,22 +304,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8d696c370c750c948ada61c69a0ee2cbbb9c50b1019ddb86d9317157a99c2cae"
 
 [[package]]
-name = "blockchain"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "hex",
- "libp2p",
- "log",
- "once_cell",
- "pretty_env_logger",
- "serde",
- "serde_json",
- "sha2",
- "tokio",
-]
-
-[[package]]
 name = "blocking"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1723,6 +1707,22 @@ name = "nohash-hasher"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2bf50223579dc7cdcfb3bfcacf7069ff68243f8c363f62ffa99cf000a6b9c451"
+
+[[package]]
+name = "noobchain"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "hex",
+ "libp2p",
+ "log",
+ "once_cell",
+ "pretty_env_logger",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tokio",
+]
 
 [[package]]
 name = "num-integer"
