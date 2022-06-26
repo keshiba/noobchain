@@ -33,6 +33,7 @@ async fn main() {
     pretty_env_logger::init();
 
     info!("Peer Id: {}", p2p::PEER_ID.clone());
+    println!("Peer Id: {}", p2p::PEER_ID.clone());
     let (response_sender, mut response_rcv):
         (tokio::sync::mpsc::UnboundedSender<p2p::ChainResponse>, tokio::sync::mpsc::UnboundedReceiver<p2p::ChainResponse>) = 
         mpsc::unbounded_channel();
@@ -76,10 +77,16 @@ async fn main() {
     });
 
     loop {
-        let evt = {
+        let evt: Option<EventType> = {
             tokio::select! {
                 line = stdin.next_line() => { 
-                    Some(EventType::Input(line.expect("read line").expect("bleh")))
+                    if let Ok(input_opt) = line {
+                        match input_opt {
+                            Some(input_str) => Some(EventType::Input(input_str)),
+                            None => None
+                        };
+                    }
+                    None
                 },
                 response = response_rcv.recv() => {
                     Some(EventType::LocalChainResponse(response.expect("aksdl")))

@@ -1,5 +1,5 @@
 [package]
-name = "noobchain"
+name = "noobchain_server"
 version = "0.1.0"
 authors = ["imkeshiba@gmail.com"]
 edition = "2021"

@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  noobchain-server:
+    build: ./noobchain_server/
+    environment:
+      RUST_LOG: info
