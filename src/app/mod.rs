@@ -1,4 +1,5 @@
 pub mod block;
+pub mod p2p;
 mod utils;
 
 use block::Block;
