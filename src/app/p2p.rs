@@ -122,10 +122,6 @@ impl NetworkBehaviourEventProcess<FloodsubEvent> for AppBehavior {
   }
 }
 
-impl NetworkBehaviourEventProcess<SwarmEvent> for AppBehavior {
-  fn inject_event(&mut self, event: SwarmEvent<>)
-}
-
 pub fn get_list_peers(swarm: &Swarm<AppBehavior>) -> Vec<String> {
   info!("Discovered Peers:");
   let nodes = swarm.behaviour().mdns.discovered_nodes();
