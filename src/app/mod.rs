@@ -1,11 +1,14 @@
+
 pub mod block;
 mod utils;
+pub mod p2p;
 
 use block::Block;
 use chrono::Utc;
 
 const DIFFICULTY_PREFIX: &str = "00";
 
+#[derive(Debug)]
 pub struct App { 
     pub blocks: Vec<Block>
 }
